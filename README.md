@@ -1,5 +1,5 @@
 # What is Stateless.Workflow?
-Stateless.Workflow is a generic and lightweight .NET C# library for creating business worfklows using state machines pattern. Project is based on Stateless library that is used to create State Machines in C# code.
+Stateless.Workflow is a generic and lightweight .NET C# library for creating business workflows using state machines pattern. Project is based on Stateless library that is used to create State Machines in C# code.
 
 ### Example 
 ```csharp
