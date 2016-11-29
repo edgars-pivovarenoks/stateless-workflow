@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"[]>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Restaurant order handling</title>
+    <link rel="stylesheet" href="../css/master.css" type="text/css" />
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+    <script src="../js/jquery.js" type="text/javascript"></script>
+    <script src="../js/scripts.js" type="text/javascript"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+  initializeToc();
+});
+</script>
+    <!-- We are using Font Awesome - http://fortawesome.github.com/Font-Awesome - licensed under CC BY 3.0 -->
+  </head>
+  <body>
+    <div id="container">
+      <div id="top" />
+      <div id="toc">
+        <p class="tocCollapser" title="Collapse Table of Content">«</p>
+        <ul class="features">
+          <li class="file" id="root">
+            <a href="../index.html">Home</a>
+          </li>
+          <li>
+            <div class="directory">
+              <a href="./index.html">Restaurant Orders</a>
+            </div>
+            <ul class="features">
+              <li class="file">
+                <span class="current">Restaurant order handling</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="feature">
+        <h1>Restaurant order handling</h1>
+        <div class="description">
+          <p>In order to make customers happy
+As a reataurant manager
+I want to all employess follow the same procedure</p>
+        </div>
+        <ul id="scenarios">
+          <li class="scenario">
+            <div class="scenario-heading" id="customer-arrives-to-empty-restaurant">
+              <h2>Customer arrives to empty restaurant</h2>
+              <p class="tags">Tags: <span>@happypath</span></p>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>customer has arrived to restaurant</li>
+                <li class="step">
+                  <span class="keyword">And </span>there are free tables available</li>
+                <li class="step">
+                  <span class="keyword">When </span>waiter provides a table to the customer</li>
+                <li class="step">
+                  <span class="keyword">Then </span>waiter starts to wait for order</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('customer-arrives-to-empty-restaurant')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+          <li class="scenario">
+            <div class="scenario-heading" id="customer-arrives-to-full-restaurant">
+              <h2>Customer arrives to full restaurant</h2>
+              <p class="tags">Tags: <span>@happypath</span></p>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>customer has arrived to restaurant</li>
+                <li class="step">
+                  <span class="keyword">And </span>there are no tables available</li>
+                <li class="step">
+                  <span class="keyword">When </span>waiter rejects customer</li>
+                <li class="step">
+                  <span class="keyword">Then </span>customer leaves restaurant</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('customer-arrives-to-full-restaurant')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="footer">
+        <p>Generated on: 11 novembrī 2016 17:52:38</p>
+        <p>Produced by Pickles, version 2.10.0.0</p>
+      </div>
+    </div>
+  </body>
+</html>

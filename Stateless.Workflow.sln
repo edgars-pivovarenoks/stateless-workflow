@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{F94DF49D-3F06-4432-B47F-F4DF3BEAC775}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{D861E69C-CACA-440E-B940-3A2CE16CC4BC}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Stateless.Workflow.Documentation", "doc\Sandcastle\Stateless.Workflow.Documentation.shfbproj", "{D37C5D74-0571-4C1D-AF82-172ECE6B92CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stateless.Workflow", "src\Stateless.Intrum\Stateless.Workflow.csproj", "{33C622C0-44B5-4000-A3CF-2C3327057BC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stateless.Workflow.Tests", "test\Stateless.Intrum.Tests\Stateless.Workflow.Tests.csproj", "{EC131861-8D33-4D04-9B5C-356923C82F14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stateless.Workflow.Example", "test\Stateless.Intrum.Example\Stateless.Workflow.Example.csproj", "{B97162EA-BDB4-4614-9D8D-112FA976DD95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D37C5D74-0571-4C1D-AF82-172ECE6B92CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D37C5D74-0571-4C1D-AF82-172ECE6B92CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D37C5D74-0571-4C1D-AF82-172ECE6B92CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C622C0-44B5-4000-A3CF-2C3327057BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C622C0-44B5-4000-A3CF-2C3327057BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C622C0-44B5-4000-A3CF-2C3327057BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C622C0-44B5-4000-A3CF-2C3327057BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC131861-8D33-4D04-9B5C-356923C82F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC131861-8D33-4D04-9B5C-356923C82F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC131861-8D33-4D04-9B5C-356923C82F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC131861-8D33-4D04-9B5C-356923C82F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B97162EA-BDB4-4614-9D8D-112FA976DD95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97162EA-BDB4-4614-9D8D-112FA976DD95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97162EA-BDB4-4614-9D8D-112FA976DD95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97162EA-BDB4-4614-9D8D-112FA976DD95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D37C5D74-0571-4C1D-AF82-172ECE6B92CE} = {F94DF49D-3F06-4432-B47F-F4DF3BEAC775}
+		{EC131861-8D33-4D04-9B5C-356923C82F14} = {D861E69C-CACA-440E-B940-3A2CE16CC4BC}
+		{B97162EA-BDB4-4614-9D8D-112FA976DD95} = {D861E69C-CACA-440E-B940-3A2CE16CC4BC}
+	EndGlobalSection
+EndGlobal
