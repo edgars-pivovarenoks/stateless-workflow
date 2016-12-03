@@ -165,7 +165,8 @@
   </Target>
   <Import Project="..\..\packages\Pickles.MSBuild.2.10.0\build\Pickles.MSBuild.targets" Condition="Exists('..\..\packages\Pickles.MSBuild.2.10.0\build\Pickles.MSBuild.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>$(SolutionDir)packages\Pickles.CommandLine.2.10.0\tools\pickles.exe --feature-directory=$(SolutionDir)test\Stateless.Intrum.Tests\Features^ --output-directory=$(SolutionDir)doc\TestCases^ --documentation-format=dhtml</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
