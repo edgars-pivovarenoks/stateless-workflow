@@ -65,13 +65,13 @@
     <Compile Include="RestaurantOrderWorkflow\RestaurantOrderWorkflowDefault.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Stateless.Intrum\Stateless.Workflow.csproj">
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Stateless.Workflow\Stateless.Workflow.csproj">
       <Project>{33c622c0-44b5-4000-a3cf-2c3327057bc2}</Project>
       <Name>Stateless.Workflow</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

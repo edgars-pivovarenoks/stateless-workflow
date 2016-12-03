@@ -126,7 +126,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Stateless.Intrum\Stateless.Workflow.csproj">
+    <ProjectReference Include="..\..\src\Stateless.Workflow\Stateless.Workflow.csproj">
       <Project>{33c622c0-44b5-4000-a3cf-2c3327057bc2}</Project>
       <Name>Stateless.Workflow</Name>
     </ProjectReference>
