@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Stateless.Workflow
 {
-    public abstract partial class WorkflowBase<TStatus, TActivity, TTask, TActor>
+    public abstract partial class WorkflowBase<TStatus, TActivity, TActor>
     {
         /// <summary>
         /// 
@@ -13,15 +13,33 @@ namespace Stateless.Workflow
         public class StateMachineConfiguration
         {
             StateMachine<TStatus, TActivity>.StateConfiguration _stateConfig;
-            WorkflowBase<TStatus, TActivity, TTask, TActor> _workflow;
+            WorkflowBase<TStatus, TActivity, TActor> _workflow;
             /// <summary>
             /// 
             /// </summary>
+            /// <param name="workflow"></param>
             /// <param name="stateConfiguration"></param>
-            public StateMachineConfiguration(WorkflowBase<TStatus, TActivity, TTask, TActor> workflow, StateMachine<TStatus, TActivity>.StateConfiguration stateConfiguration)
+            public StateMachineConfiguration(WorkflowBase<TStatus, TActivity, TActor> workflow, StateMachine<TStatus, TActivity>.StateConfiguration stateConfiguration)
             {
                 _stateConfig = stateConfiguration;
                 _workflow = workflow;
+            }
+            /// <summary>
+            /// Permits the trigger only if all conditions are met.
+            /// </summary>
+            /// <param name="trigger">The trigger.</param>
+            /// <param name="destinationState">State of the destination.</param>
+            /// <param name="actorGuard">The role guard.</param>
+            /// <param name="tasksGuard">The tasks guard.</param>
+            /// <param name="guards">The guards.</param>
+            /// <returns>State machine configuration</returns>
+            public StateMachineConfiguration PermitOnlyIf(
+                TActivity trigger,
+                TStatus destinationState,
+                TransitionGuard tasksGuard,
+                params Func<bool>[] guards)
+            {
+                return PermitOnlyIf(trigger, destinationState, null, tasksGuard, guards);
             }
             /// <summary>
             /// Permits the trigger only if all conditions are met.
@@ -43,10 +61,13 @@ namespace Stateless.Workflow
 
                 var listOfGuards = new List<TransitionGuard>(new[] { actorGuard });
 
-                var otherGuards = guards
-                    .Select(g => new TransitionGuard(g, g.Method.Name))
-                    .ToList();
+                var otherGuards = new List<TransitionGuard>();
+                if (tasksGuard != null)
+                    otherGuards.Add(tasksGuard);
 
+                otherGuards.AddRange(guards
+                    .Select(g => new TransitionGuard(g, g.Method.Name)));
+                
                 listOfGuards
                     .AddRange(otherGuards);
 
@@ -95,7 +116,7 @@ namespace Stateless.Workflow
             /// <param name="destinationState">State of the destination.</param>
             /// <param name="roleGuard">The actor guard, use this.PermitFor() helper method to define list of permitted roles.</param>
             /// <returns></returns>
-            public StateMachineConfiguration PermitForActors(               
+            public StateMachineConfiguration PermitForActors(
                 TActivity trigger,
                 TStatus destinationState,
                 TransitionGuard roleGuard)
@@ -105,7 +126,7 @@ namespace Stateless.Workflow
 
                 return
                     this;
-            }        
+            }
             public StateMachine<TStatus, TActivity> Machine { get { return _stateConfig.Machine; } }
             /// <summary>
             /// 

@@ -61,6 +61,7 @@
     <Compile Include="RestaurantOrderWorkflow\Interfaces\IWorkflowProvider.cs" />
     <Compile Include="RestaurantOrderWorkflow\MealOrder.cs" />
     <Compile Include="RestaurantOrderWorkflow\Providers\ActorProviderManual.cs" />
+    <Compile Include="RestaurantOrderWorkflow\Providers\TasksProviderManual.cs" />
     <Compile Include="RestaurantOrderWorkflow\RestaurantOrderRules.cs" />
     <Compile Include="RestaurantOrderWorkflow\RestaurantOrderWorkflowDefault.cs" />
   </ItemGroup>

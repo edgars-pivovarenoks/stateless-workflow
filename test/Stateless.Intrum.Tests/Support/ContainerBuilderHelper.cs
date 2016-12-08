@@ -31,6 +31,11 @@ public static class ContainerBuilderHelper
             .AsSelf()
             .SingleInstance();
 
+        builder.RegisterType<TasksProviderAll>()
+            .AsImplementedInterfaces()
+            .AsSelf()
+            .SingleInstance();
+
         builder.RegisterType<RestaurantOrderWorkflowDefault>()
             .AsImplementedInterfaces()
             .AsSelf()

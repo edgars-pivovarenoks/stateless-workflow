@@ -42,12 +42,12 @@ namespace Stateless.Workflow
             public ICollection<T> Tasks { get; private set; }
         }
 
-        private readonly IWorkflow<TStatus, TActivity, TTask, TActor> _workflow;
+        private readonly IWorkflowTasks<TStatus, TActivity, TTask, TActor> _workflow;
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowTaskRunner{TStatus, TActivity, TTask, TActor}"/> class.
         /// </summary>
         /// <param name="workflow">The workflow.</param>
-        public WorkflowTaskRunner(IWorkflow<TStatus, TActivity, TTask, TActor> workflow)
+        public WorkflowTaskRunner(IWorkflowTasks<TStatus, TActivity, TTask, TActor> workflow)
         {
             _workflow = workflow;
         }

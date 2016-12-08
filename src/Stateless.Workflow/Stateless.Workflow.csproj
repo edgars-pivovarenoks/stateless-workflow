@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\CausesAttribute.cs" />
+    <Compile Include="Interfaces\ITasksProvider.cs" />
     <Compile Include="StateMachineConfiguration.cs" />
     <Compile Include="DynamicStateObject.cs" />
     <Compile Include="Exceptions\Activity\UnmetTransitionGuardsException.cs" />
@@ -69,6 +70,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="TransitionGuard.cs" />
+    <Compile Include="WorkflowBase.cs" />
     <Compile Include="WorkflowTaskRunner.cs" />
     <Compile Include="Exceptions\WorkflowExceptionBase.cs" />
     <Compile Include="Extensions\HelperExtensions.cs" />
@@ -76,13 +78,13 @@
     <Compile Include="Extensions\WorkflowExtensions.cs" />
     <Compile Include="Interfaces\IActorProvider.cs" />
     <Compile Include="Interfaces\IStateObject.cs" />
-    <Compile Include="Interfaces\IWorkflowBase.cs" />
+    <Compile Include="Interfaces\IWorkflow.cs" />
     <Compile Include="Exceptions\Tasks\TaskDtoNotAllowedWorkflowException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restriction.cs" />
     <Compile Include="RestrictionBuilder.cs" />
     <Compile Include="RestrictionList.cs" />
-    <Compile Include="WorkflowBase.cs" />
+    <Compile Include="WorkflowTasksBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

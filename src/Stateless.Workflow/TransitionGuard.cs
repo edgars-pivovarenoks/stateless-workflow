@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Stateless.Workflow
 {
     /// <summary>
-    /// Helper class to facilitate creation of guard conditions based on roles, used by extension method <see cref="WorkflowExtensions.PermitForActors{TState,TActivity}"/> and created by <see cref="WorkflowBase{TStatus,TActivity,TTask,TActor}.For"/> method.
+    /// Helper class to facilitate creation of guard conditions based on roles, used by extension method <see cref="WorkflowExtensions.PermitForActors{TState,TActivity}"/> and created by <see cref="WorkflowTasksBase{TStatus,TActivity,TTask,TActor}.For"/> method.
     /// </summary>
     public class TransitionGuard
     {
@@ -26,7 +26,7 @@ namespace Stateless.Workflow
         }
 
         /// <summary>
-        /// Gets or sets the dynamic role guard method. Assigned by <see cref="WorkflowBase{TStatus,TActivity,TTask,TActor}.For"/> method.
+        /// Gets or sets the dynamic role guard method. Assigned by <see cref="WorkflowTasksBase{TStatus,TActivity,TTask,TActor}.For"/> method.
         /// </summary>
         /// <value>
         /// The guard method.
