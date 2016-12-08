@@ -93,6 +93,30 @@ namespace Stateless.Workflow
                 actorGuard;
         }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="requredTasks"></param>
+        /// <returns></returns>
+        protected TransitionGuard RequireDone(params TTask[] requredTasks)
+        {
+            var tasksGuard = new TransitionGuard(
+
+                guardMethod: () => true,
+                /*
+                () => _tasksProvider
+                    .GetTasksDone()
+                    .All(requredTasks),
+                    */
+                description: requredTasks
+                    .Select(r => r.ToString())
+                    .ToSeparatedString(", ")
+
+                );
+
+            return
+                tasksGuard;
+        }
+        /// <summary>
         /// Gets or sets the task restrictions by actor.
         /// </summary>
         /// <value>

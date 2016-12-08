@@ -11,9 +11,12 @@ namespace Stateless.Workflow.Example
 
 
             Configure(Status.CustomerArrived)
-                .PermitOnlyIf(Activity.RejectCustomer, Status.CustomerLeft, For(Actor.Waiter),
+                .PermitOnlyIf(Activity.RejectCustomer, Status.CustomerLeft, 
+                    For(Actor.Waiter),
+                    RequireDone(TaskType.ProvideMenu),
                     _rules.NoTablesAvailable)
                 .PermitOnlyIf(Activity.ProvideTable, Status.WaitingForOrder, For(Actor.Waiter),
+                    RequireDone(TaskType.GreetCustomer),
                     _rules.TablesAvailable);
 
             Configure(Status.WaitingForOrder)

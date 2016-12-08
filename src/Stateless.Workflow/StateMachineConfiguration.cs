@@ -29,14 +29,18 @@ namespace Stateless.Workflow
             /// <param name="trigger">The trigger.</param>
             /// <param name="destinationState">State of the destination.</param>
             /// <param name="actorGuard">The role guard.</param>
+            /// <param name="tasksGuard">The tasks guard.</param>
             /// <param name="guards">The guards.</param>
             /// <returns>State machine configuration</returns>
             public StateMachineConfiguration PermitOnlyIf(
                 TActivity trigger,
                 TStatus destinationState,
                 TransitionGuard actorGuard,
+                TransitionGuard tasksGuard,
                 params Func<bool>[] guards)
             {
+                // TODO : register tasksGuard
+
                 var listOfGuards = new List<TransitionGuard>(new[] { actorGuard });
 
                 var otherGuards = guards
