@@ -104,8 +104,8 @@ Any .NET object that will implement Status and WorkflowVersion property can be s
 ## What's missing?
 - Same Actions with conditional Target state are not enough robust;
 - Targeting .NET Core :
-- Depends on support in Statless library,
-- There is currently open issue [Target .NET Core #67](https://github.com/dotnet-state-machine/stateless/issues/67);
+   - Depends on support in Statless library,
+   - There is currently open issue [Target .NET Core #67](https://github.com/dotnet-state-machine/stateless/issues/67);
 - Should investigate more  scenarios and benefits of :
 - InternalTransition() method,
 - SubstateOf() to create super ans sub-states.
