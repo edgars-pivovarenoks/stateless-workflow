@@ -12,7 +12,7 @@ namespace Stateless.Workflow
     /// <typeparam name="TTask">The type of the task.</typeparam>
     /// <typeparam name="TActor">The type of the actor.</typeparam>
     /// <seealso cref="Stateless.Workflow.IWorkflow{TStatus, TActivity, TTask, TActor}" />
-    public abstract class WorkflowBase<TStatus, TActivity, TTask, TActor> : IWorkflow<TStatus, TActivity, TTask, TActor> where TTask : struct
+    public abstract partial class WorkflowBase<TStatus, TActivity, TTask, TActor> : IWorkflow<TStatus, TActivity, TTask, TActor> where TTask : struct
         where TStatus : struct
         where TActivity : struct
         where TActor : struct
@@ -337,10 +337,10 @@ namespace Stateless.Workflow
         /// </summary>
         /// <param name="status">The status.</param>
         /// <returns>State configurator</returns>
-        protected StateMachine<TStatus, TActivity>.StateConfiguration Configure(TStatus status)
+        protected StateMachineConfiguration Configure(TStatus status)
         {
-            return Machine
-                .Configure(status);
+            return new StateMachineConfiguration(this, Machine
+                .Configure(status));
         }
         /// <summary>
         /// Configures the actor restrictions.

@@ -9,6 +9,7 @@ namespace Stateless.Workflow.Example
         {
             _rules = rules;
 
+
             Configure(Status.CustomerArrived)
                 .PermitOnlyIf(Activity.RejectCustomer, Status.CustomerLeft, For(Actor.Waiter),
                     _rules.NoTablesAvailable)
@@ -27,6 +28,8 @@ namespace Stateless.Workflow.Example
             ConfigureTasksFor(Actor.Waiter)
                 .Allow(TaskType.GreetCustomer, TaskType.ProvideMenu)
                 .When(Status.CustomerArrived);
+
+            
         }
         public void ProvideTable()
         {
