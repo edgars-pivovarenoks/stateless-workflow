@@ -59,7 +59,7 @@ You can limit which Actor can execute particular Activity in given Status. Two m
         .PermitForActors(Activity.SubmitAmendments, Status.Submitted, For(Actor.Agent));
 ```
 
-### Multiple Business Rules Clauses
+### Multiple Business Rule Clauses
 
 Business rules can be implemented as simple .NET bool methods and configured as Guards for Activities.
 
