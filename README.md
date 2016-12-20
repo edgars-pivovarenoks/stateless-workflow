@@ -56,7 +56,7 @@ You can limit which Actor can execute particular Activity in given Status. Two m
 
 ```csharp
     Configure(Status.PendingAmendment)
-        .PermitForActors(Activity.SubmitAmendments, Status.Submitted, PermitFor(Actor.Agent));
+        .PermitForActors(Activity.SubmitAmendments, Status.Submitted, For(Actor.Agent));
 ```
 
 ### Multiple Business Rules Clauses
@@ -65,7 +65,7 @@ Business rules can be implemented as simple .NET bool methods and configured as 
 
 ```csharp
     Configure(Status.Registered)
-        .PermitOnlyIf(Activity.Submit, Status.Submitted, PermitFor(Actor.Agent),
+        .PermitOnlyIf(Activity.Submit, Status.Submitted, For(Actor.Agent),
             HasProvidedDateOfBirth,
             HasProvidedPassportCopy,
             HasVerifiedEMailAddress);
